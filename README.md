@@ -1,5 +1,12 @@
 # 👟 RetroShoes E-commerce 
 
+<p align="center">
+  | <a href=READMEEN.md>English</a> | 
+    <span>Español</span> |
+</p>
+<be>
+
+
 Este proyecto es un e-commerce de zapatos desarrollado con ASP.NET Core, que utiliza una base de datos SQL para almacenar la información de los productos, los usuarios y otras entidades relevantes. Además, se ha implementado una API utilizando Swagger para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos de productos, así como también filtros por género y marca.
 
 ## 🚀 Características principales
