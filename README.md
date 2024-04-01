@@ -9,6 +9,10 @@
 ## 📃 Descripción:
 Este proyecto es un e-commerce de zapatos desarrollado con ASP.NET Core, que utiliza una base de datos SQL para almacenar la información de los productos, los usuarios y otras entidades relevantes. Además, se ha implementado una API utilizando Swagger para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos de productos, así como también filtros por género y marca.
 
+## 🎨 Prototipo (Figma):
+ > [➡️ Ver](https://www.figma.com/file/GrSZEXsHGsxIMm6Aj6h9EA/Untitled-(Copy)?type=design&node-id=0%3A1&mode=design&t=4MZctDs8eVDLBooF-1)
+
+
 ## 🚀 Características principales
 
 - **ASP.NET Core**: El proyecto está desarrollado utilizando ASP.NET Core, lo que proporciona una plataforma robusta y escalable para la construcción de aplicaciones web.
