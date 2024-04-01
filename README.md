@@ -25,14 +25,28 @@ Este proyecto es un e-commerce de zapatos desarrollado con ASP.NET Core, que uti
 git clone https://github.com/SantiagoAnzola1/RetroShoes.git
 ```
 
-2. **Configurar la base de datos**: Configura una base de datos SQL Server y actualiza la cadena de conexión en el archivo `appsettings.json` con la información de tu instancia de SQL Server.
-
+2. **Crear archivo `appsettings.json` **: Crear archivo **`appsettings.json`** dentro de la carpeta UserAPI e incluir:
 ```json
 {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+
   "ConnectionStrings": {
-    "DefaultConnection": "Server=<server>;Database=<database>;User=<user>;Password=<password>;MultipleActiveResultSets=true"
-  }
+    "DefaultConnection": "data source=<Server name>;initial catalog=<database name>;User Id=<user id/ username>;Password=<password>"
+  },
+  "AllowedHosts": "*"
 }
+```
+3. **Configurar la base de datos**: Configura una base de datos SQL Server y actualiza la cadena de conexión en el archivo `appsettings.json` con la información de tu instancia de SQL Server.
+
+```json
+"ConnectionStrings": {
+    "DefaultConnection": "data source=<Server name>;initial catalog=<database name>;User Id=<user id/ username>;Password=<password>"
+  }
 ```
 3. **Crear Base de Datos**: Descarga el archivo `SQLQuery1.sql` y ejecuta en el sistema de gestión de base de datos relacional de tu preferencia. 
 
