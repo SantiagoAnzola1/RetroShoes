@@ -25,7 +25,7 @@ Este proyecto es un e-commerce de zapatos desarrollado con ASP.NET Core, que uti
 git clone https://github.com/SantiagoAnzola1/RetroShoes.git
 ```
 
-2. **Crear archivo `appsettings.json` **: Crear archivo **`appsettings.json`** dentro de la carpeta UserAPI e incluir:
+2. **Crear archivo `appsettings.json`**: Crear archivo **`appsettings.json`** dentro de la carpeta UserAPI e incluir:
 ```json
 {
   "Logging": {
