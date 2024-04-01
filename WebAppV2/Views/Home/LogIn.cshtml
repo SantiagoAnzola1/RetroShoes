@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+    Layout = "~/Views/Shared/Limpio.cshtml";
+    
+}
+@model User
+
+@*<link rel="stylesheet" href="CSS/iniciosesion.css">*@
+<link rel="stylesheet" href="~/css/iniciosesion.css" asp-append-version="true">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+
+<div class="center">
+
+    <h1>Inicia sesión</h1>
+
+     @using (Html.BeginForm("IsLogged", "Home", FormMethod.Post ))
+    {
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="txt_field">
+            <input  type="number" name="Cedula" required>
+            <span></span>
+            <label>Cedula/ID</label>
+            
+        </div>
+        <div class="txt_field">
+            <input type="password" name="Password" required>
+            <span></span>
+            <label>Contraseña</label>
+        </div>
+        @*<a href="olvidocontrasena.html"><div class="pass">¿Olvidaste tu contraseña?</div></a>*@
+        <input type="submit" value="Login">
+        <div class="signup_link">
+            ¿No tienes cuenta? <a asp-area="" asp-controller="" asp-action="SignUp">Registrate</a>
+        </div>
+    }
+
+</div>

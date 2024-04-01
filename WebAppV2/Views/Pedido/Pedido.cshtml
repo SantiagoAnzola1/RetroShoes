@@ -1,0 +1,201 @@
+﻿@model IEnumerable<WebAppV2.Models.Product>
+@{
+    ViewData["Title"] = "Pedido";
+    Layout = "~/Views/Shared/_Layout - Copia - Copia.cshtml";
+}
+
+
+@{
+    <link rel="stylesheet" href="~/css/style2.css" asp-append-version="true">
+
+    String[] itemCount = new string[8] { "item-a", "item-b", "item-c", "item-d", "item-e", "item-f", "item-g", "item-h"};
+    List<string>list = new List<string>();
+    int i = 0;
+    int pos = 0;
+    int pos2 = 0;
+    int limit = 0;
+    int lenght=0;
+    int adv = 0;
+    @if (Model != null)
+    { 
+        foreach (WebAppV2.Models.Product p in Model)
+        {
+            if (p.ProductId == "2" || p.ProductId == "11" || p.ProductId == "25" || p.ProductId == "29" || p.ProductId == "31")
+            {
+                list.Add(""+p.ProductId);
+                lenght++;
+            }
+            
+        }
+        Console.WriteLine(lenght);
+    }
+
+}
+
+
+<section class="h-100" >
+    <div class="container h-100 py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10">
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-normal mb-0 text-black">Carrito de Compras</h3>
+                    
+                </div>
+              
+                @if(Model !=null)
+                {
+
+                    @foreach (WebAppV2.Models.Product p in Model)
+                    {
+                            @if ((Convert.ToInt32(p.Stock) > 0) && (adv<1))
+                            {
+                                <div asp-validation-summary="All" class="text-warning"></div>
+                                adv++;
+                            }
+                        bool s = list.Contains(p.ProductId);
+                        if(s==true)
+                        {
+                            @if(p.Stock=="0"){<div asp-validation-summary="All" class="text-warning"></div>}
+                            
+                            <div class="card rounded-3 mb-4">
+                                <div class="card-body p-4">
+                                    <div class="row d-flex justify-content-between align-items-center">
+                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                            <img src="@Url.Content(""+p.Imagen)"
+                                     class="img-fluid rounded-3">
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                            <p class="lead fw-normal mb-2">@p.ProductName</p>
+                                            <p><span class="text-muted"> </span>@p.Marca</p>
+                                            <p><span class="text-muted"> </span>@p.Genero</p>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                            <button class="btn btn-link px-2 "
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+
+                                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                       class="form-control form-control-sm" />
+
+                                            
+
+                                            <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                            @*<p class="text-center"class><span class="text-muted"> </span>@p.Stock</p>*@
+                                        </div>
+                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                            <h5 class="mb-0">$@p.Precio</h5>
+                                        </div>
+                                        @*<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                            i++;
+                        }
+                        
+                    }
+
+
+                }
+                else
+                {
+                    <div style="color:red;"> No Data Found</div>
+                }
+                @if(i<=0){
+                    <div style="color:red;"> No Data Found</div>
+                }
+
+
+              @using (Html.BeginForm("CreatePedido", "Pedido", FormMethod.Post))
+              {
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+
+                      <div class="form-outline mb-4">
+                                <label class="form-label">Dirección: </label>
+                                <input type="text" name="Direccion"  class="form-control" required />
+                      </div>
+    
+                  </div>
+                </div>
+
+
+                <div class="">
+                    <div class="">
+                      
+                            <button type ="submit" class="w-100 btn btn-warning btn-block btn-lg">Aplicar</button>
+                        
+                    </div>
+                </div>
+              }
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<h2>Create user</h2>
+
+@*@using (Html.BeginForm("DeleteUser", "Home", FormMethod.Post))
+{
+    <input type="text" name="Cedula" value="" />
+    <input class="btn btn-primary" type="submit" value="Delete User" />
+}*@
+
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+<h2>List of Users</h2>*@
+
+<div class="container" style="width:100%">
+
+    @if (Model != null)
+    {
+        <table id="Table_Users" class="table table-striped" style="width:100%">
+            <colgroup>
+                <col style="width:33%">
+                <col style="width:33%">
+                <col style="width:34%">
+            </colgroup>
+            <thead>
+                <tr>
+                    
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("User Name")
+                    </th>
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("Email")
+                    </th>
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("Password")
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (WebAppV2.Models.Product oListItem in Model)
+                {
+                <tr>
+                    <td>@oListItem.ProductName</td>
+                    <td>@oListItem.Imagen</td>
+                    <td>@oListItem.Marca</td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div style="color:red;"> No Data Found</div>
+    }
+</div>
+

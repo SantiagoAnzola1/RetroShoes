@@ -1,0 +1,143 @@
+
+.navbar-brand{
+    margin-left: 8.3% !important; 
+}
+.nav-link.active1{
+    color: var(--color-naranja) !important;
+}
+.indexactive i{
+
+    color:  #242424 !important;
+}
+.index{
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+   
+    border:0 !important;
+    
+}
+.index a{
+    color: var(--color-naranja) !important;
+}
+.imagen h5{
+    display: block;
+    position: absolute;
+    top: 22rem !important;
+    right: 10%;
+    left: 60%;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+.img-btn {
+
+    position: absolute;
+    bottom: 1% !important;
+  
+    right: 5% !important;
+}
+@media (min-width: 1800px) {
+
+ 
+    .img-btn {
+        top:  48rem !important;
+    }
+ 
+  
+
+  }
+@media (min-width: 1199.98px) {
+
+    .imagen img {
+        width: 100% !important;
+    }
+    .imagen h5 {
+        top:  22rem  !important;
+    }
+    .img-btn {
+        top: 35rem !important;
+       
+    }
+ 
+  
+
+  }
+
+@media (max-width: 1199.98px) {
+
+    .imagen h5{
+      top: 22rem !important;
+      font-size: 25px;
+      font-weight: 600;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .img-btn {
+        position: absolute;
+        top : 30rem  !important;
+      
+        right: 5% !important;
+    }
+
+  }
+
+@media (max-width:  990.98px) {
+
+    .imagen h5{
+      top: 23rem !important;
+      font-size: 20px;
+      font-weight: 600;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .img-btn {
+        position: absolute;
+        bottom: 10% !important;
+      
+        right: 5% !important;
+    }
+
+  }
+@media (max-width:   767.98px) {
+
+    .imagen h5{
+      top: 22rem !important;
+      font-size: 20px;
+      font-weight: 600;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .img-btn {
+        position: absolute;
+        bottom: 20% !important;
+      
+        right: 5% !important;
+    }
+
+  }
+  @media (max-width: 722px) { 
+    .img-btn {
+        position: absolute;
+        top: 27rem !important;
+     
+        right: 5% !important;
+    }
+    
+  }
+  @media (max-width: 575.98px) { 
+    .imagen h5{
+        top: 23em !important;
+        font-size: 15px;
+        font-weight: 600;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .img-btn {
+          position: absolute;
+          top: 27rem !important;
+       
+          right: 5% !important;
+      }
+    
+  }

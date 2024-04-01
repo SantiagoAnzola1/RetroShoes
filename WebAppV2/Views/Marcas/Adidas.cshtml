@@ -1,0 +1,131 @@
+﻿@model IEnumerable<WebAppV2.Models.Product>
+@{
+    ViewData["Title"] = "Adidas";
+   
+    Layout = "~/Views/Shared/_Layout - Copia.cshtml";
+}
+
+
+@{
+    String[] itemCount = new string[8] { "item-a", "item-b", "item-c", "item-d", "item-e", "item-f", "item-g", "item-h"};
+    List<String>list_String = new List<String>();
+  
+    int limit = 0;
+   
+    
+
+
+}
+
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+<link rel="stylesheet" href="~/css/styleHombre.css" asp-append-version="true">
+<div class="conteiner-xl pt-4 pb-2">
+    <div class="col-10">
+
+        <nav class="navbar navbar-expand-md ">
+            <a class="navbar-brand" href="#">
+                <h1>Adidas</h1>
+
+            </a>
+            <ul class="navbar-nav ms-auto nvsitem">
+               @* <li class="nav-item mx-3">
+                    <a class="nav-link active1" aria-current="page" href="#">Hombres</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Mujeres</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Ninos</a>
+                </li>*@
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+
+<div class="container-xl">
+    <div class="row">
+        @if (Model != null)
+        {
+            @foreach (WebAppV2.Models.Product p in Model)
+            {
+
+                if (p.Marca == "Adidas")
+                {
+
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+
+                        <div class="box">
+
+                            <div class="product-grid3">
+                                <div class="product-image3">
+                                    <a href="#">
+                                        <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                        <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                    </ul>
+                                    <span class="product-new-label">@p.Categoria</span>
+
+                                    <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                        <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                    </div>
+                                    <div class="price">
+                                        $@p.Precio.ToString("N2")
+
+                                    </div>
+                                    <ul class="rating">
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star "></li>
+                                        <li class="fa fa-star disable"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    limit++;
+                }
+
+
+
+            }
+
+
+        }
+        else
+        {
+            <div style="color:red;"> No Data Found</div>
+        }
+
+        @if (limit <= 0)
+        {
+            <div style="color:red;"> No Data Found</div>
+        }
+
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,65 @@
+﻿@*@model IEnumerable<WebAppV2.Controllers.HomeController>*@
+@model User
+
+@{
+    ViewData["Title"] = "Registrarse";
+    Layout = "~/Views/Shared/Limpio.cshtml"; 
+    
+    string Cedula = ViewBag.Cedula.ToString();
+
+}
+<link rel="stylesheet" href="~/css/iniciosesion.css" asp-append-version="true">
+
+
+<div class="center">
+<h1>Registrate</h1>
+
+
+
+
+    @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post ))
+    {
+        <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="txt_field">
+            <input type="text" name="UserName" value="" required>
+                <span></span>
+                <label>Usuario</label>
+            </div> 
+         
+            <div class="txt_field">
+                
+                <input type="number" name="Cedula" value="@Cedula" required>
+                <span></span>
+                <label>Cedula </label>
+                
+
+            </div>
+       
+             <div class="txt_field">
+                <input type="email" name="Email" value="" required>
+                <span></span>
+                <label>Correo</label>
+            </div>
+
+            <div class="txt_field">
+                <input type="password" name="Password" value="" required />
+                <span></span>
+                <label>Contraseña</label>
+            </div>
+        <asp:Label runat="CreateUser" CssClass="alert-danger" ID="lblError"></asp:Label>
+           @* <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <div>@Alerta</div>
+            </div>*@
+        
+            @*<a href="olvidocontrasena.html"><div class="pass">¿Olvidaste tu contraseña?</div></a>*@
+            <input type="submit" value="Registrarse" class="submit">
+
+            <div class="signup_link">
+            ¿Ya tienes cuenta? <a asp-area="" asp-controller="" asp-action="LogIn">Iniciar Sesión</a>
+            </div>
+        }
+
+    
+   
+</div>
+

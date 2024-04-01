@@ -1,0 +1,685 @@
+﻿@model IEnumerable<WebAppV2.Models.Product>
+@{
+    ViewData["Title"] = "Principal";
+    //string NameUser = ViewBag.NameUser.ToString();
+   
+}
+
+
+@{
+    String[] itemCount = new string[8] { "item-a", "item-b", "item-c", "item-d", "item-e", "item-f", "item-g", "item-h"};
+    List<String>list_String = new List<String>();
+    int i = 0;
+    int pos = 0;
+    int pos2 = 0;
+    int limit = 0;
+    int lenght=0;
+    
+    @if (Model != null)
+    { 
+        foreach (WebAppV2.Models.Product p in Model)
+        {
+
+            list_String.Add("" + p.ProductId);
+            lenght++;
+        }
+        Console.WriteLine(lenght);
+    }
+
+}
+
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+
+<!-- imageslider -->
+<div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="@Url.Content("~/imagenes/Principal/1.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption  d-block ">
+                <h5>Conoce todas las marcas disponibles</h5>
+
+                @* <div class="slider-btn ">
+                <!-- <button class="btn btn-1">Más información</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/2.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption  d-block ">
+                <h5>Descubre Vans</h5>
+
+                @* <div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Más información</button> -->
+                </div>*@
+            </div>
+
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/3.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-block  ">
+                <h5>Lo nuevo de Nike</h5>
+
+                @*  <div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Comprar</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/4.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-block  ">
+                <h5>Lo nuevo de Adidas</h5>
+
+                @*<div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Más información</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/5.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-block  ">
+                <h5>Nueva colección de Adidas</h5>
+
+                @*<div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Ver</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/6.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption der d-block  ">
+                <h5>No te pierdas de los nuevos Air Force Max</h5>
+
+                @*<div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Comprar</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="@Url.Content("~/imagenes/Principal/7.png")" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-block  ">
+                <h5>Conoce todas las marcas</h5>
+
+                @*<div class="slider-btn izq">
+                <!-- <button class="btn btn-1">Ver</button> -->
+                </div>*@
+            </div>
+
+
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- fin imgslider -->
+@if(lenght>=8)
+{
+    <div class="container-xl  mt-2 mb-3 pt-2 pb-3 mt-md-5 mb-md-5 pt-md-5 pb-md-5">
+
+        <section class="slider mt-5 mb-5 pt-5 pb-5 mt-5 mb-5 pt-5 pb-5">
+            <ul id="autoWidth" class="cs-hidden">
+                @if (Model != null)
+                {
+
+                    @foreach (WebAppV2.Models.Product p in Model)
+                    {
+                        if ((list_String[pos] == p.ProductId) && pos < 8)
+                        {
+                            <li class="@itemCount[pos]">
+                                <!--box-slider--------------->
+                                <div class="box">
+                                    <!--img-box---------->
+                                    <div class="product-grid3">
+                                        <div class="product-image3">
+                                            <a href="#">
+                                                <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                                <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                            </ul>
+                                            <span class="product-new-label">@p.Categoria</span>
+
+                                            <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="row">
+                                                <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                                <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                            </div>
+                                            <div class="price">
+                                                $@p.Precio.ToString("N2")
+                                                @*  <span>$75.00</span>*@
+                                            </div>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star "></li>
+                                                <li class="fa fa-star disable"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        }
+                        pos++;
+
+
+
+                    }
+                }
+                else
+                {
+                    <div style="color:red;"> No Data Found</div>
+                }
+            </ul>
+        </section>
+
+    </div>
+}else if(lenght>=1 && lenght<8)
+{
+
+    <div class="container-xl mt-2 mb-3 pt-2 pb-3 mt-md-5 mb-md-5 pt-md-5 pb-md-5">
+
+        <section class="slider mt-5 mb-5 pt-5 pb-5 mt-5 mb-5 pt-5 pb-5">
+            <ul id="autoWidth" class="cs-hidden">
+                @if (Model != null)
+                {
+
+                    @foreach (WebAppV2.Models.Product p in Model)
+                    {
+                        if ((list_String[pos] == p.ProductId) && (pos<lenght))
+                        {
+                            <li class="@itemCount[pos]">
+                                <!--box-slider--------------->
+                                <div class="box">
+                                    <!--img-box---------->
+                                    <div class="product-grid3">
+                                        <div class="product-image3">
+                                            <a href="#">
+                                                <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                                <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                            </ul>
+                                            <span class="product-new-label">@p.Categoria</span>
+
+                                            <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="row">
+                                                <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                                <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                            </div>
+                                            <div class="price">
+                                                $@p.Precio.ToString("N2")
+                                                @*  <span>$75.00</span>*@
+                                            </div>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star "></li>
+                                                <li class="fa fa-star disable"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        }
+                        pos++;
+
+
+
+                    }
+                }
+                else
+                {
+                    <div style="color:red;"> No Data Found</div>
+                }
+            </ul>
+        </section>
+
+    </div>
+
+}
+
+
+
+<div class="container ">
+    <h3 class="">Marcas</h3>
+    <div class="row">
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card0" style="
+        border-radius: 20%;
+    ">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Adidas">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card1">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Nike">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card2">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Puma">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card3">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="UnderArmour">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card4">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Fila">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card5">
+                    <div class="borde">
+                        <a class="fancy"asp-area="" asp-controller="Marcas" asp-action="Reebok">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card6">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Vans">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card7">
+                    <div class="borde">
+                        <a class="fancy" asp-area="" asp-controller="Marcas" asp-action="Converse">
+                            <span class="top-key"></span>
+                            <span class="text">Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="containert">
+                <div class="card card8">
+                    <div class="borde">
+                        <a class="fancy"asp-area="" asp-controller="Marcas" asp-action="NewBalance">
+                            <span class="top-key"></span>
+                            <span class="text"> Ver</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if ( lenght>=16){
+    <div class="container-xl  mt-2 mb-3 pt-2 pb-3 mt-md-5 mb-md-5 pt-md-5 pb-md-5">
+
+        <section class="slider mt-5 mb-5 pt-5 pb-5 mt-5 mb-5 pt-5 pb-5">
+            <ul id="autoWidth1" class="cs-hidden1">
+                @if (Model != null)
+                {
+
+                    @foreach (WebAppV2.Models.Product p in Model)
+                        
+                    {
+                        if ((list_String[pos2] == p.ProductId) &&  (pos2 > 7) && (pos2 < 16)  && (limit < 8))
+                        {
+                            <li class="@itemCount[limit]">
+                                <!--box-slider--------------->
+                                <div class="box">
+                                    <!--img-box---------->
+                                    <div class="product-grid3">
+                                        <div class="product-image3">
+                                            <a href="#">
+                                                <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                                <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                            </ul>
+                                            <span class="product-new-label">@p.Categoria</span>
+
+                                            <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="row">
+                                                <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                                <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                            </div>
+                                            <div class="price">
+                                                $@p.Precio.ToString("N2")
+                                                @*  <span>$75.00</span>*@
+                                            </div>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star "></li>
+                                                <li class="fa fa-star disable"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                            limit++;
+                        }
+                        pos2++;
+                        
+
+
+
+                    }
+                }
+                else
+                {
+                    <div style="color:red;"> No Data Found</div>
+                }
+            </ul>
+        </section>
+
+    </div>
+
+}
+else if (lenght > 8 && lenght < 16)
+{
+    <div class="container-xl mt-2 mb-3 pt-2 pb-3 mt-md-5 mb-md-5 pt-md-5 pb-md-5">
+
+        <section class="slider mt-5 mb-5 pt-5 pb-5 mt-5 mb-5 pt-5 pb-5">
+            <ul id="autoWidth1" class="cs-hidden1">
+                @if (Model != null)
+                {
+
+                    @foreach (WebAppV2.Models.Product p in Model)
+                    {
+
+                        if ((list_String[pos2] == p.ProductId) && (pos2 > 7) && (pos2 < lenght) && (limit < 8))
+                        {
+                            <li class="@itemCount[limit]">
+                                <!--box-slider--------------->
+                                <div class="box">
+                                    <!--img-box---------->
+                                    <div class="product-grid3">
+                                        <div class="product-image3">
+                                            <a href="#">
+                                                <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                                <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                            </a>
+                                            <ul class="social">
+                                                <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                            </ul>
+                                            <span class="product-new-label">@p.Categoria</span>
+
+                                            <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="row">
+                                                <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                                <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                            </div>
+                                            <div class="price">
+                                                $@p.Precio.ToString("N2")
+                                                @*  <span>$75.00</span>*@
+                                            </div>
+                                            <ul class="rating">
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star"></li>
+                                                <li class="fa fa-star "></li>
+                                                <li class="fa fa-star disable"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                            limit++;
+                        }
+                        pos2++;
+                        
+
+                    }
+                }
+                else
+                {
+                    <div style="color:red;"> No Data Found</div>
+                }
+            </ul>
+        </section>
+
+    </div>
+
+}
+
+
+
+
+
+
+<link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https:cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+
+<div class="container" style="width:100%">
+    <h2>Get product</h2>
+    <a class="sidebaropc" asp-area="0" asp-controller="Home" asp-action="ProductDetails">Product Details</a>
+
+    <form class="form">
+        <input type="text" name="id" value="" placeholder="Product Id" />
+        <input class="btn btn-primary" type="submit" value="Get Product" />
+    </form>
+
+        <div id="divProductDetails"></div>
+
+
+   @if (Model != null)
+   {
+       
+       <table id="Table_Users" class="table table-striped mt-5" style="width:100%">
+           <colgroup>
+               <col style="width:33%">
+               <col style="width:33%">
+               <col style="width:33%">
+           </colgroup>
+           <thead>
+               <tr>
+                    
+                   <th class="bg-primary text-white fw-normal">
+                       @Html.Label("User Name")
+                   </th>
+                   <th class="bg-primary text-white fw-normal">
+                       @Html.Label("Email")
+                   </th>
+                   <th class="bg-primary text-white fw-normal">
+                       @Html.Label("Password")
+                   </th>
+               </tr>
+           </thead>
+           <tbody>
+               @foreach (WebAppV2.Models.Product oListItem in Model)
+               {
+               <tr>
+                   <td>@oListItem.ProductName</td>
+                   <td>@oListItem.Precio</td>
+                   <td>@oListItem.Marca</td>
+               </tr>
+               }
+
+           </tbody>
+       </table>
+   }
+   else
+   {
+       <div style="color:red;"> No Data Found</div>
+   }
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $('form').on('submit', function (e) {
+        e.preventDefault();
+
+        var id = $('input[name="id"]').val();
+
+        $.ajax({
+            url: '/Home/GetProductById',
+            type: 'POST',
+            data: { id: id },
+            success: function (data) {
+                $('#divProductDetails').html(data)
+            }
+        });
+    });
+  
+
+</script>

@@ -1,0 +1,411 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetroShoes - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebAppV2.styles.css" asp-append-version="true" />*@
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" asp-append-version="true" >
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" asp-append-version="true">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" asp-append-version="true" >
+    <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet' asp-append-version="true" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" asp-append-version="true">
+    <!--light-slider.css------------->
+    <link rel="stylesheet" type="text/css" href="~/Lightslider/lightslider.css">
+    <link rel="shortcut icon" href="~/imagenes/favicon.png" type="image/x-icon" asp-append-version="true" >
+</head>
+
+<body>
+    <header>
+        
+        <!-- Inicio nav superior -->
+            <nav class="navbar  navbar-expand p-0 ">
+                <div class="container navSuperior">
+               
+                    <ul class="navbar-nav d-flex align-items-right navSuperior ">
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link d-flex align-items-right " data-abc="true"><span>Envios gratis</span></a>
+                        </li>
+                   
+                    
+                    </ul> <!-- list-inline //  -->
+                  </div> <!-- navbar-collapse .// -->
+                 <!-- container //  -->
+            </nav> <!--Fin nav superior -->
+    
+            <section class=" navverde ">
+
+              <!-- Nav colapsado -->
+              <nav class="d-lg-none d-block pt-2">
+                <div class="container-fluid px-md-5c  buscador pt-3 pb-3" >
+                    <div class="row justify-content-between flex-wrap flex-row ">
+                   
+                            <div class="row">
+                           
+                                <div class="col-6 d-flex   d-flex  flex-column align-items-start text-right">
+
+                                  <div class="social-media1 ">
+                                    <div class=" amrgennavizq mb-0 d-flex m-auto  justify-content-start  ">
+
+                                      <div class="bntcolapsable d-flex align-items-start justify-content-center nav-link" href="#">
+                                  
+                                            <div id="mySidebar" class="sidebar">
+                                                <a href="javascript:void(0)" class="closebtn sidebaropc" onclick="closeNav()">×</a>
+                                                <a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-center justify-content-center mb-4 "><img src=@Url.Content("~/imagenes/logo.png") alt="RetroShoes"></a>
+                                                <a class="sidebaropc" asp-area="" asp-controller="Filtros" asp-action="Hombres">Hombres</a>
+                                                <a class="sidebaropc" asp-area="" asp-controller="Filtros" asp-action="Mujeres">Mujeres</a>
+                                                <a class="sidebaropc" asp-area="" asp-controller="Filtros" asp-action="Ninos">Niños</a>
+                               
+                                                <hr class="'mt-5">
+                                                <a class="sidebarbtn align-items-center justify-content-center pl-2" asp-area="" asp-controller="" asp-action="UserInfo">
+                                                    <span class="bi bi-person mr-5 pr-5" style="
+                                                  margin-right: 3px;"></span>Iniciar Sesión</a>
+                                                @*<a class="sidebarbtn1 align-items-center justify-content-center mt-3" href="#suscribirse" onclick="closeNav()">Suscríbete</a>*@
+                                
+                              
+
+                             
+
+
+                                            </div>
+      
+                                            <div id="main">
+                                                <button class="openbtn btncolaps" onclick="openNav()">☰ </button>  
+                                
+                                            </div>
+                                      </div>
+                               
+                                        <a asp-area="" asp-controller="Filtros" asp-action="Index" class="d-flex align-items-center justify-content-center"><img class="w-20 imglogo" src=@Url.Content("~/imagenes/logo.png") alt=""  ></a>
+                                
+                                
+                                    </div>
+                                  </div>
+                        
+                            
+                         
+                                
+                        
+                                </div><!--col  -->
+
+                            
+                            <div class="col-6 d-flex  mx-auto d-flex align-items-end
+                            flex-column 
+                            justify-content-center 
+                            text-center">
+
+                        
+                                <div class="social-media  ">
+                                    <div class="mb-0 d-flex m-auto align-items-center justify-content-center   ">
+                                      
+                                        <a asp-area="" asp-controller="" asp-action="UserInfo" class="d-flex align-items-center justify-content-center redondo"><span class=""><i class=""> <img src=@Url.Content("~/imagenes/bienvenida/user.png") alt="" width="20px"></i></span></a>
+                                        <a asp-area="" asp-controller="Pedido" asp-action="Orden"  class="notification d-flex align-items-center justify-content-center redondo"><span class=""><i class=""> <img src=@Url.Content("~/imagenes/bienvenida/megusta.png") alt="" width="20px"></i></span>
+                                          <span id="notifiSpan"  class="badge">2</span></a>
+                                        <a asp-area="" asp-controller="Pedido" asp-action="Pedido" class="notification d-flex align-items-center justify-content-center redondo">
+                                            <span class=""><i class=""> <img src=@Url.Content("~/imagenes/bienvenida/carritocompras.png") alt="" width="20px"></i></span>
+                                          <span id="notifiSpan2"  class="badge">0</span>
+                                        </a>
+                            
+                                    </div>
+                                </div>
+                            </div>
+
+
+                       
+                        </div>
+                    </div>
+                </div>
+                             
+          
+              </nav>
+           <!-- fin nav callapasado -->
+
+           <!-- Nav Expandido -->
+              <nav>
+               <div class="container-fluid px-md-5c  buscador" >
+                <div class="row justify-content-between flex-wrap flex-row ">
+                   
+                    <div class="row">
+                           
+                                <div class="col-lg-4 d-flex   d-flex  
+                                flex-column 
+                                justify-content-center align-items-start 
+                                text-center">
+
+                                    <div class="social-media1">
+                                      <div  class=" d-none  d-lg-block d-flex 
+                                        justify-content-center 
+                                        " >
+
+                                  
+                                            <div class=" mb-md-0 d-flex m-auto align-items-center justify-content-center mr-5">
+                                                <a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-center justify-content-center"><img src=@Url.Content("~/imagenes/logo.png") alt="RetroShoes"  ></a>
+                                       
+                                   
+                                            </div>
+                                      </div>
+
+
+                     
+                                    </div>
+                                
+                        
+                                </div><!--col  -->
+                                <div class="col-lg-4 d-lg-flex justify-content align-items-center mb-md-0 mb-3 mx-auto  d-lg-block d-none ">
+
+
+                              
+    
+                                    <nav class="  navPrincipal navbar navbar-expand-md navbar-light justify-content-center align-items-center mx-auto ">
+                                        <div class="container-fluid ">
+                                      
+                                          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                            <i class="bi bi-list"></i>
+                                          </button>
+                                          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                                            <ul class=" catgorias navbar-nav justify-content-center ">
+                                              <li class="nav-item ">
+                                                    <a class="nav-link " aria-current="page" asp-area="" asp-controller="Filtros" asp-action="Hombres">Hombres</a>
+                                              </li>
+                                              <li class="nav-item">
+                                                <a class="nav-link" asp-area="" asp-controller="Filtros" asp-action="Mujeres">Mujeres</a>
+                                              </li>
+                                              <li class="nav-item">
+                                                <a class="nav-link" asp-area="" asp-controller="Filtros" asp-action="Ninos">Niños</a>
+                                              </li>
+                                              <span class="target"></span>
+                                          
+                                        
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </nav>
+                                  
+    
+                                </div>
+                        
+                            
+                            <div class="col-lg-4 d-flex  mx-auto d-flex align-items-end
+                            flex-column 
+                            justify-content-center 
+                            text-center">
+
+                        
+                                <div class="social-media d-lg-block d-none ">
+                                    <div class="mb-0 d-flex m-auto align-items-center justify-content-center   ">
+                                        <form action="#" class="searchform  w-50  d-md-block d-none mr-2">
+                                            <div class="form-group d-flex ">
+        
+        
+                                       
+                                            <div class="d-flex form-inputs w-100  " style=" padding-right: 2px;padding-bottom: 11px;">
+                                            <input class="form-control border-0 border-bottom searchform border-secondary"type="text" placeholder="Buscar...">
+                                            <i class="">  <a href="#"><img src=@Url.Content("~/imagenes/bienvenida/busqueda.png") class="iconnos" ></a></i>
+                                        </div >
+                               
+                                
+                                
+                                
+                                            </div>
+                                    </form>
+                          
+                                    <a asp-area="" asp-controller="" asp-action="UserInfo" class="d-flex align-items-center justify-content-center redondo"><span class="ico"><i class=""> <img src=@Url.Content("~/imagenes/bienvenida/user.png") alt="" width="20px"></i></span></a>
+                                        <a asp-area="" asp-controller="Pedido" asp-action="Orden" class="redondo notification d-flex align-items-center justify-content-center ">
+                             
+                                      <span class="ico"><i class=""> <img src=@Url.Content("~/imagenes/bienvenida/megusta.png") alt="" width="20px"></i></span>
+                            
+                                      <span id="notifiSpan0"  class="badge">2</span>
+                                    </a>
+                                        <a asp-area="" asp-controller="Pedido" asp-action="Pedido" class="notification d-flex align-items-center justify-content-center redondo ">
+                              
+                                      <span class="ico"><i class=""><img src=@Url.Content("~/imagenes/bienvenida/carritocompras.png") alt="" width="20px"></i></span>
+
+                                      <span id="notifiSpan21"  class="badge">0</span>
+                                    </a>
+                                
+                            
+                                    </div>
+                                 </div>
+                            </div>
+
+    <!-- formulario busqueda colapsado -->
+                            <form action="#" class="searchform px-4  d-lg-none d-block col-12 m-auto align-items-center    justify-content-center mx-2">
+                              <div class="form-group d-flex ">
+
+
+                             
+                                  <div class="d-flex form-inputs w-100 " style=" padding-right: 2px">
+                                    <input class="form-control border-0 border-bottom searchform border-secondary"type="text"   placeholder="Buscar...">
+                                    <i class="">  <a href="#"><img src=@Url.Content("~/imagenes/bienvenida/busqueda.png") class="iconnos" ></a></i>
+                                  </div >
+                     
+                      
+                      
+                      
+                               </div>
+                            </form>
+                    
+                    
+                  
+                    </div>
+                </div>
+               </div>
+              </nav>
+            <!-- END nav expandido -->
+        
+            </section>
+            <hr class="m-2">
+      </header>
+    <!-- toast -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3 ">
+            <div id="liveToast" class="toast " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <i class="mr-3 icon1 bi bi-bag-check-fill"></i>
+                    <strong class="me-auto mx-3 tit">Producto agregado a Me gusta</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    El producto ha sido agregado correctamente.
+                </div>
+            </div>
+
+
+
+
+            <div id="liveToast1" class="toast " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header  ">
+                    <i class="mr-3 icon2 bi bi-bag-x-fill"></i>
+                    <strong class="me-auto mx-3 tit">Producto eliminado de Megusta</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    El producto ha sido eliminado correctamente.
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- fin toast -->
+
+
+
+   
+        <main role="main" class="pb-5">
+            @RenderBody()
+        </main>
+    
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-none text-muted colorr ">
+
+
+
+        <div class="ms-5 ">
+
+            <section class="d-flex justify-content-center justify-content-between pt-4 ">
+                <!-- Left -->
+                <div class="me-5  d-block pl-5"></div>
+                <!-- Left -->
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 redes">
+                        <i><img src=@Url.Content("~/imagenes/bienvenida/instagram.png")s alt="" width="30px"></i>
+                    </a>
+                    <a href="" class="me-4 redes">
+                        <i><img src=@Url.Content("~/imagenes/bienvenida/facebook.png") alt="" width="30px"></i>
+                    </a>
+                    <a href="" class="me-4 redes">
+                        <i><img src=@Url.Content("~/imagenes/bienvenida/twitter.png") alt="" width="30px"></i>
+                    </a>
+
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+            <!-- Section: Links  -->
+            <section class=" color centrar">
+                <div class="container text-center text-md-start ">
+                    <!-- Grid row -->
+                    <div class="row  ml-auto justify-content-end">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                            <!-- Content -->
+                            <h5 class="text-uppercase fw-bold ">
+
+                                <i class="bi bi-award-fill me-2 text-secondary"></i>Retro Shoes
+                            </h5>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-start logofot"><img class="w-20 imglogo" src=@Url.Content("~/imagenes/logo.png") alt="Bootstrap"></a>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mb-0 color mr-0 align-items-center d-flex justify-content-center">
+                            <!-- Links -->
+                            <a href="#" class=" fw-bold  text-left mr-0 text-muted align-middle linksfooter">
+                                Acerca de nosotros
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mb-0 color mr-0 align-items-center d-flex justify-content-center ">
+                            <!-- Links -->
+                            <a href="#" class=" fw-bold text-left mr-0 text-muted align-middle linksfooter">
+                                Contáctanos
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mb-0 color mr-0 align-items-center d-flex justify-content-center">
+                            <!-- Links -->
+                            <a href="#" class=" fw-bold text-left mr-0 text-muted align-middle linksfooter">
+                                Ayuda
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+
+
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+
+        </div>
+
+        <div class="text-center pb-3">
+            © 2022 RetroShoes:
+            <a class="text-reset fw-bold" asp-area="" asp-controller="Home" asp-action="Index">RetroShoes.com</a>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    <!--Jquery-------------------->
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <!--lightslider.js--------------->
+    <script type="text/javascript" src="~/Lightslider/lightslider.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="./node_modules/bootstrap-show-notification/src/bootstrap-show-notification.js"></script>
+    <script src="~/js/myscript.js" asp-append-version="true" ></script>
+    <script src="~/js/notifications.js" ></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

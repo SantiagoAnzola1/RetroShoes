@@ -1,0 +1,85 @@
+
+.nav-link img{
+   height: 40px !important;
+  
+
+}
+.nav-link:hover{
+   opacity: 0.5;
+  
+
+}
+body{
+    background-color: var(--color-naranja) !important;
+}
+
+@media (max-width: 768px){
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+    }
+
+}
+@media (max-width: 768px){
+    .nav-link img{
+        height: 30px !important;
+     
+     }
+
+}
+
+.retroshoes{
+    width:60% !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 1rem !important;
+    max-width: 400px !important;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+}
+.btncom{
+
+    background-color: #000000 !important;
+   
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    width: 250px !important;
+    height: 65px;
+    border-radius: 0px 50px !important;
+    background-image: url(../imagenes/bienvenida/comprar.png)  ;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+  
+}
+.btncom:hover{
+    background-color: #4F0000 !important;
+}
+.red{
+    width: 30% !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+    opacity: 0.7;
+}
+.red div:hover{
+    opacity: 0.3;
+}
+.zapato{
+    margin-right:10%;
+}
+@media (max-width: 768px){
+    .zapato{
+        display:none!important;
+    }
+}
+@media (min-width: 768px){
+    .red{
+        width: 40% !important;
+    }
+}
+.bediff{
+    font-family: 'Bree Serif';
+    font-weight: 400;
+    font-size: 24px;    
+    color: #F2CE23;
+    text-indent: 20px;
+}

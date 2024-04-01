@@ -1,0 +1,149 @@
+﻿@model IEnumerable<WebAppV2.Models.Orden>
+@{
+    ViewData["Title"] = "Facturación";
+    Layout = "~/Views/Shared/_Layout - Copia - Copia.cshtml";
+}
+
+@{
+    List<String> list_String = new List<String>();
+    int lenght = 0;
+
+    @if (Model != null)
+    {
+        foreach (WebAppV2.Models.Orden p in Model)
+        {
+
+            list_String.Add("" + p.PrecioTotal.ToString("N2"));
+            list_String.Add("" + p.Entrega);
+            list_String.Add("" + p.EsEntregado);
+            lenght++;
+        }
+        Console.WriteLine(lenght);
+        Console.WriteLine("PRECIO TOTAL:  "+list_String[0]);
+        Console.WriteLine("ENTREGA:  " + list_String[1]);
+        Console.WriteLine("ES_ENTREGA:  " + list_String[2]);
+    }
+
+}
+<link rel="stylesheet" href="~/css/style2.css" asp-append-version="true">
+
+    <style>
+        .table > thead {
+            background-color: black;
+            color: white;
+        }
+    </style>
+<div class="container-lg table-responsive-sm mt-5 mb-5">
+    <table class="table thead-dark">
+        @if (Model != null)
+        {
+            <thead>
+                <tr>
+                    
+                    <th colspan="2" scope="col">Producto</th>
+                    <th scope="col">Precio Individual</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (WebAppV2.Models.Orden p in Model)
+                {
+                    <tr>
+                        <td >@p.ProductName</td>
+                        <td><img width="100" src="@Url.Content(""+p.Imagen)"></td>
+                        <td>@p.PrecioIndividual.ToString("N2")</td>
+                        <td>@p.Cantidad</td>
+                        <td>@p.Precio.ToString("N2")</td>
+                    </tr>
+                }
+
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Total: $ @list_String[0]</th>
+                </tr>
+                <tr>
+                    
+                    <th scope="col">Dirección: @list_String[1]</th>
+                </tr>
+                <tr>
+                   
+                    @if(@list_String[2]=="True")
+                    {
+                        <th scope="col">Entregado:Pedido entregado</th>
+                    }else
+                        @if (@list_String[2] == "False")
+                    {
+                       <th scope="col">Entregado: Pedido en camino</th>
+                    }
+                </tr>
+            </thead>
+            </tbody>
+        }
+        else
+        {
+            <div style="color:red;"> No Data Found</div>
+        }
+    </table>
+
+
+
+</div>
+
+
+
+@*@using (Html.BeginForm("DeleteUser", "Home", FormMethod.Post))
+{
+    <input type="text" name="Cedula" value="" />
+    <input class="btn btn-primary" type="submit" value="Delete User" />
+}*@
+
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+<h2>List of Users</h2>*@
+@*
+<div class="container" style="width:100%">
+
+    @if (Model != null)
+    {
+        <table id="Table_Users" class="table table-striped" style="width:100%">
+            <colgroup>
+                <col style="width:33%">
+                <col style="width:33%">
+                <col style="width:34%">
+            </colgroup>
+            <thead>
+                <tr>
+                    
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("User Name")
+                    </th>
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("Email")
+                    </th>
+                    <th class="bg-primary text-white fw-normal">
+                        @Html.Label("Password")
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (WebAppV2.Models.Product oListItem in Model)
+                {
+                <tr>
+                    <td>@oListItem.ProductName</td>
+                    <td>@oListItem.Imagen</td>
+                    <td>@oListItem.Marca</td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div style="color:red;"> No Data Found</div>
+    }
+</div>
+
+*@

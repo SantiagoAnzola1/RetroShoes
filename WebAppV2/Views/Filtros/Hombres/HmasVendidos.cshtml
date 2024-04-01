@@ -1,0 +1,122 @@
+﻿@model IEnumerable<WebAppV2.Models.Product>
+
+@{
+    ViewData["Title"] = "Hombres/Más Vendido";
+    //string NameUser = ViewBag.NameUser.ToString();
+    Layout = "~/Views/Shared/_Layout - Copia.cshtml";
+}
+
+
+@{
+ 
+    int limit = 0;
+} 
+
+    
+ 
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+<link rel="stylesheet" href="~/css/styleHombre.css" asp-append-version="true">
+<div class="conteiner-xl pt-2 pb-5">
+    <div class="col-10">
+
+        <nav class="navbar navbar-expand-md ">
+            <a class="navbar-brand" asp-area="" asp-controller="Filtros" asp-action="Hombres">
+                <h1>Hombres</h1>
+
+            </a>
+            <ul class="navbar-nav ms-auto nvsitem">
+                <li class="nav-item mx-3">
+                    <a class="nav-link " aria-current="page" asp-area="" asp-controller="Filtros" asp-action="Hofertas">Ofertas</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link active1" asp-area="" asp-controller="Filtros" asp-action="HmasVendidos">Más Vendido</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" asp-area="" asp-controller="Filtros" asp-action="Hnuevo">Nuevo</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container-xl">
+    <div class="row">
+     @if (Model != null)
+     {
+        @foreach (WebAppV2.Models.Product p in Model)
+        {
+            if(p.Categoria=="Más vendido")
+            {
+                    <div class="col-md-4 col-6">
+
+                        <div class="box">
+
+                            <div class="product-grid3">
+                                <div class="product-image3">
+                                    <a href="#">
+                                        <img class="pic-1" src="@Url.Content(""+p.Imagen)">
+                                        <img class="pic-2" src="@Url.Content(""+p.Imagen)">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" onclick="gfg_Run1();" class="custom-btn btncompar"><span><i class="glyphicon fa fa-shopping-bag "></i> Agregar al carrito</span></a></li>
+
+
+                                    </ul>
+                                    <span class="product-new-label">@p.Categoria</span>
+
+                                    <i onclick="like(this)" onclick="like(this)" class="like like-no"></i>
+
+
+
+                                </div>
+                                <div class="product-content">
+                                    <div class="row">
+                                        <h6 class="title disable " style="color: grey;"><span class="disable">@p.Genero</span></h6>
+                                        <h3 class="title"><a href="#">@p.ProductName</a></h3>
+
+
+                                    </div>
+                                    <div class="price">
+                                        $@p.Precio.ToString("N2")
+
+                                    </div>
+                                    <ul class="rating">
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star"></li>
+                                        <li class="fa fa-star "></li>
+                                        <li class="fa fa-star disable"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                 limit++;
+            }       
+
+            
+               
+           
+        }
+          
+
+         
+     }
+        else
+         {
+             <div style="color:red;"> No Data Found</div>
+         }
+         @if (limit <=0)
+         {
+            <div style="color:red;"> No Data Found</div>
+         }
+ 
+    
+    </div>
+</div>   
+
