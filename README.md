@@ -1,37 +1,35 @@
-# RetroShoes E-commerce 
+# 👟 RetroShoes E-commerce 
 
 Este proyecto es un e-commerce de zapatos desarrollado con ASP.NET Core, que utiliza una base de datos SQL para almacenar la información de los productos, los usuarios y otras entidades relevantes. Además, se ha implementado una API utilizando Swagger para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos de productos, así como también filtros por género y marca.
 
-## Características principales
+## 🚀 Características principales
 
 - **ASP.NET Core**: El proyecto está desarrollado utilizando ASP.NET Core, lo que proporciona una plataforma robusta y escalable para la construcción de aplicaciones web.
 - **Base de datos SQL**: Se utiliza una base de datos SQL para almacenar la información de los productos, usuarios y otras entidades del sistema.
 - **API Swagger**: Se ha implementado una API con Swagger, lo que facilita la documentación y el consumo de los servicios web.
-- **Operaciones CRUD**: La API permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos de productos.
+- **Operaciones CRUD**: La API permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos de forma segura, implementando medidas para prevenir y mitigar posibles ataques de inyección SQL.
 - **Filtros por género y marca**: Los usuarios pueden filtrar los zapatos por género y marca para una experiencia de compra personalizada.
 - **Inicio de sesión y registro**: Se proporciona funcionalidad de inicio de sesión y registro para los usuarios.
 
-## Por hacer 
-  - [ ] Carrito de compras: Implementar la funcionalidad del carrito de compras que permita a los usuarios agregar productos, modificar cantidades y eliminar productos del carrito antes de proceder al pago.
+## 📝 Por hacer 
+  - [ ] 🛒 Carrito de compras: Implementar la funcionalidad del carrito de compras que permita a los usuarios agregar productos, modificar cantidades y eliminar productos del carrito antes de proceder al pago.
 
- - [ ] Completado de orden: Desarrollar el flujo para que los usuarios puedan completar la orden de compra una vez que hayan revisado y confirmado los productos en su carrito. Esto incluye la generación de la orden, el cálculo del total y la integración con pasarelas de pago.
+ - [ ] 🛍️ Completado de orden: Desarrollar el flujo para que los usuarios puedan completar la orden de compra una vez que hayan revisado y confirmado los productos en su carrito. Esto incluye la generación de la orden, el cálculo del total y la integración con pasarelas de pago.
 
- - [ ] Seguridad adicional: Reforzar la seguridad del sistema implementando medidas como autenticación de dos factores, gestión de sesiones seguras y políticas de contraseñas más estrictas.
+ - [ ] 🔒 Seguridad adicional: Reforzar la seguridad del sistema implementando medidas como autenticación de dos factores, gestión de sesiones seguras y políticas de contraseñas más estrictas.
 
- - [ ] Validación de datos: Añadir validaciones adicionales a las entradas de datos de los usuarios para prevenir posibles ataques de seguridad como inyección de SQL o XSS (Cross-Site Scripting).
+ - [ ] 🧪 Pruebas unitarias y de integración: Escribir pruebas unitarias y de integración para garantizar la fiabilidad y el correcto funcionamiento del sistema en diferentes escenarios y casos de uso.
 
- - [ ] Pruebas unitarias y de integración: Escribir pruebas unitarias y de integración para garantizar la fiabilidad y el correcto funcionamiento del sistema en diferentes escenarios y casos de uso.
-
- - [ ] Optimización de rendimiento: Realizar optimizaciones en el código y la base de datos para mejorar el rendimiento de la aplicación, reduciendo los tiempos de carga y aumentando la capacidad de respuesta.
+ - [ ] ⚡ Optimización de rendimiento: Realizar optimizaciones en el código y la base de datos para mejorar el rendimiento de la aplicación, reduciendo los tiempos de carga y aumentando la capacidad de respuesta.
 
 
-## Requisitos del sistema
+## 🛠️ Requisitos del sistema
 
 - **ASP.NET Core SDK**: Es necesario tener instalado el SDK de ASP.NET Core para compilar y ejecutar el proyecto.
 - **SQL Server**: Se requiere una instancia de SQL Server para alojar la base de datos del sistema.
 - **Navegador web**: Para interactuar con la aplicación a través de la interfaz de usuario.
 
-## Configuración del proyecto
+## ⚙️ Configuración del proyecto
 
 1. **Clonar el repositorio**: Clona el repositorio del proyecto desde GitHub.
 
